@@ -4,8 +4,27 @@
   background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100vh;
   color: #ffffff;
-}
 
-.translated-text {
-  background: lightgray;
+  .translated-text {
+    background: lightgray;
+  }
+
+  .custom-nav {
+    .fun-nav-item {
+      cursor: pointer;
+
+      a {
+        color: #ffffff;
+      }
+
+      .active {
+        border: 1px solid lightblue;
+
+      }
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
 }

@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
-import './App.css';
+import { NavLink } from 'react-router-dom'
+
+import './App.scss';
 
 class App extends Component {
   render() {
     return (
       <div className="d-flex flex-column tdd-fun-app">
         <div className="d-flex justify-content-end p-2">
-          <button className="btn btn-warning">Login</button>
+          <ul className="nav custom-nav">
+            <li className="nav-item fun-nav-item mr-2">
+              <NavLink to="/yoda" className="nav-link rounded">Talk like Yoda</NavLink>
+            </li>
+            <li className="nav-item fun-nav-item mr-2">
+              <NavLink to="/pirate" className="nav-link rounded">Talk like Pirate</NavLink>
+            </li>
+          </ul>
+          <button className="btn btn-warning">Login for more</button>
         </div>
-        <div className="container flex-grow-1 d-flex flex-column justify-content-center align-items-center">
-          <h1>Let's have some fun</h1>
-          <p>Input text to translate it to master Yoda style</p>
-          <div className="input-group">
-            <textarea className="form-control" aria-label="With textarea" placeholder="Enter text..."></textarea>
-          </div>
-          <div className="my-2">
-            <button className="btn btn-primary">Translate</button>
-          </div>
-          <div className="input-group">
-            <textarea className="form-control" 
-              aria-label="With textarea" 
-              placeholder="Translated text..." 
-              disabled></textarea>
-          </div>
+        <div className="container flex-grow-1">
+          { this.props.children }
         </div>
       </div>
     );
